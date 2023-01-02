@@ -1,7 +1,7 @@
-require_relative 'repositories/movies_repository'
-require_relative 'repositories/watchlist_repository'
+require_relative 'repositories/movie_repository'
+# require_relative 'repositories/watchlist_repository'
 require_relative 'controllers/movies_controller'
-require_relative 'controllers/watchlists_controller'
+# require_relative 'controllers/watchlists_controller'
 require_relative "router"
 require 'pry-byebug'
 

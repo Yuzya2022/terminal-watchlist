@@ -1,5 +1,4 @@
 require "json"
-# require "open-uri"
 require_relative "../models/movie"
 
 class MovieRepository
@@ -37,11 +36,10 @@ end
 
 def load_json
   serialized_movies = File.read(@json_file)
-  movies = JSON.parse(serialized_movies, {symbolize_name: true})
+  movies = JSON.parse(serialized_movies, {symbolize_names: true})
   movies.each do |movie|
     @movies << Movie.new(movie)
   end
   @movie_id = @movies.last.id +1
 end
-
 end
