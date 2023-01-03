@@ -29,9 +29,10 @@ private
 def save_json
   saved_data = @movies.map do |movie|
     {id: movie.id, name: movie.name, description: movie.description, rating: movie.rating, year: movie.year}
-  File.open(json_file_path, "wb") do |file|
-    file.write(JSON.generate(saved_data))
   end
+  File.open(@json_file, "wb") do |file|
+    file.write(JSON.generate(saved_data))
+    end
 end
 
 def load_json
@@ -40,6 +41,6 @@ def load_json
   movies.each do |movie|
     @movies << Movie.new(movie)
   end
-  @movie_id = @movies.last.id +1
+  @movie_id = @movies.last.id + 1
 end
 end

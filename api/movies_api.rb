@@ -19,7 +19,8 @@ class MoviesApi
         name: film["original_title"],
         description: film["overview"],
         rating: film["vote_average"],
-        year: film["release_date"].split("-").first
+        year: film["release_date"]&.split("-")&.first
       })
     end
+  end
 end
